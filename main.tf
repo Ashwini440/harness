@@ -8,7 +8,7 @@ resource "aws_instance" "public_instance" {
 }
 resource "aws_instance" "harness" {
   # The ID of the EC2 instance that you want to import
-  
+   instance_type = "t2.micro"      
 }
 
 terraform {
