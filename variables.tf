@@ -9,8 +9,8 @@ variable "aws_region" {
 
 variable "ami" {
    type        = string
-   description = "Ubuntu AMI ID"
-   default     = "ami-0f5ee92e2d63afc18"
+   description = "centos AMI ID"
+   default     = "ami-03a6dea316143e1c8"
 }
 
 variable "instance_type" {
