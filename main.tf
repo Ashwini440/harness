@@ -6,5 +6,13 @@ resource "aws_instance" "public_instance" {
    Name = var.name_tag,
  }
 }
+terraform {
+  backend "s3" {
+    bucket         = "harness-iacm-bucket"
+    key            = "harness/terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+     }
+}
   
     
