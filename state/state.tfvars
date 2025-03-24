@@ -1,36 +1,12 @@
-account_id = "<harness-account-id>"
-org = "<harness-org>"
-project = "<harness-project>"
-default_provisioner_type = "terraform"
-default_provisioner_version = "1.5.7"
-default_cost_estimation_enabled = true
-default_provider_connector = "<cloud-provider-connector-name>"
-default_repository_connector = "<git-repo-connector-name>"
-workspaces = [
-    {
-        identifier = "workspace_demo_1"
-        repository = "<repo-directory>"
-        repository_path = "migration-demo-1"
-        repository_branch = "<repo-branch>"
-        terraform_variables = [
-            {
-                key = "instance_type"
-                value = "t2.micro"
-                value_type = "string"
-            }
-        ],
-    },
-    {
-        identifier = "workspace_demo_2"
-        repository = "<repo-directory>"
-        repository_path = "migration-demo-2"
-        repository_branch = "<repo-branch>"
-        terraform_variables = [
-            {
-                key = "instance_type"
-                value = "t2.micro"
-                value_type = "string"
-            }
-        ],
-    },
-]
+harness_account_id    = "_Ci0EyZJTDmD1Kc1t_OA_A"
+harness_org_id        = "default"
+harness_project_id    = "default_project"
+harness_api_key       = "aswini-api"
+harness_workspace     = "statemigrateworkspace"
+
+source_backend_type   = "s3"  # Change this based on your backend type (e.g., GCS, Azure)
+source_bucket_name    = "harness-iacm-bucket"
+source_key            = "harness/terraform.tfstate"
+source_region         = "us-east-1"
+
+destination_workspace = "statemigrateworkspace"
