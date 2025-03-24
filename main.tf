@@ -7,23 +7,12 @@ resource "aws_instance" "my_instance" {
  }
 }
 
-#terraform {
- # backend "s3" {
-  #  bucket         = "harness-iacm-bucket"
-   # key            = "harness/terraform.tfstate"
-   #  key            = "terraform/statefile.tfstate"
-  #  region         = "us-east-1"
-  #  encrypt        = true
- # }
-#}
 terraform {
-  backend "remote" {
-    hostname     = "app.harness.io"
-    organization = "default"
-    workspaces {
-      name = "terraform-state"
-    }
-  }
+  backend "s3" {
+    bucket         = "harness-iacm-bucket"
+    key            = "harness/terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+ }
 }
-
 
