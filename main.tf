@@ -18,10 +18,12 @@ resource "aws_instance" "my_instance" {
 #}
 terraform {
   backend "remote" {
-    organization = "SFTY_Training"
+    hostname     = "app.harness.io"
+    organization = "default"
     workspaces {
-      name = "aswiniworkspace"
+      name = "terraform-state"
     }
   }
 }
+
 
