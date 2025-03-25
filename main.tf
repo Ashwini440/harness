@@ -9,7 +9,7 @@ resource "aws_instance" "my_instance" {
 
 terraform {
   backend "s3" {
-    bucket         = "harness-iacm-bucket"
+    bucket         = "test-iacm-bucket"
     key            = "harness/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
